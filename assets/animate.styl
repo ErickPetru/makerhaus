@@ -1,0 +1,96 @@
+.animated
+  animation-duration: 1s
+  animation-fill-mode: both
+  &.infinite
+    animation-iteration-count: infinite
+  &.hinge
+    animation-duration: 2s
+  &.flipOutX, &.flipOutY, &.bounceIn, &.bounceOut
+    animation-duration: .75s
+  for $delay in 250 500 750 1000 1250 1500 1750 2000 2250 2500 2750 3000
+    &.delay-{$delay}
+      animation-delay: unit($delay, 'ms')
+
+@keyframes fadeIn
+  from
+    opacity: 0
+  to
+    opacity: 1
+
+.fadeIn
+  animation-name: fadeIn
+
+@keyframes fadeOut
+  from
+    opacity: 1
+  to
+    opacity: 0
+
+.fadeOut
+  animation-name: fadeOut
+
+@keyframes fadeInUp
+  from
+    opacity: 0
+    transform: translate3d(0, 100%, 0)
+  to
+    opacity: 1
+    transform: none
+
+.fadeInUp
+  animation-name: fadeInUp
+
+@keyframes fadeInDown
+  from
+    opacity: 0
+    transform: translate3d(0, -100%, 0)
+  to
+    opacity: 1
+    transform: none
+
+.fadeInDown
+  animation-name: fadeInDown
+
+@keyframes flipInX
+  from
+    transform: perspective(400px) rotate3d(1, 0, 0, 90deg)
+    animation-timing-function: ease-in
+    opacity: 0
+  40%
+    transform: perspective(400px) rotate3d(1, 0, 0, -20deg)
+    animation-timing-function: ease-in
+  60%
+    transform: perspective(400px) rotate3d(1, 0, 0, 10deg)
+    opacity: 1
+  80%
+    transform: perspective(400px) rotate3d(1, 0, 0, -5deg)
+  to
+    transform: perspective(400px)
+
+.flipInX
+  backface-visibility: visible !important
+  animation-name: flipInX
+
+@keyframes zoomInDown
+  from
+    opacity: 0
+    transform: scale3d(.1, .1, .1) translate3d(0, -1000px, 0)
+    animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190)
+  60%
+    opacity: 1
+    transform: scale3d(.475, .475, .475) translate3d(0, 60px, 0)
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1)
+
+.zoomInDown
+  animation-name: zoomInDown
+  animation-duration: .75s
+
+@keyframes slideInDown
+  from
+    transform: translate3d(0, -100%, 0)
+    visibility: visible
+  to
+    transform: translate3d(0, 0, 0)
+
+.slideInDown
+  animation-name: slideInDown

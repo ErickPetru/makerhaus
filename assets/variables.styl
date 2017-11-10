@@ -1,0 +1,26 @@
+$font-base = 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, Sans-serif
+$font-featured = 'Montserrat', Sans-serif;
+
+breakpoint($range)
+  $phone-upper-boundary = 600px
+  $tablet-portrait-upper-boundary = 900px
+  $tablet-landscape-upper-boundary = 1200px
+  $desktop-upper-boundary = 1500px
+  if $range == phone-only
+    @media (max-width: $phone-upper-boundary - 1)
+      {block}
+  else if $range == phone-large-up
+    @media (min-width: $phone-upper-boundary - 200)
+      {block}
+  else if $range == tablet-portrait-up
+    @media (min-width: $phone-upper-boundary)
+      {block}
+  else if $range == tablet-landscape-up
+    @media (min-width: $tablet-portrait-upper-boundary)
+      {block}
+  else if $range == desktop-up
+    @media (min-width: $tablet-landscape-upper-boundary)
+      {block}
+  else if $range == big-desktop-up
+    @media (min-width: $desktop-upper-boundary)
+      {block}
