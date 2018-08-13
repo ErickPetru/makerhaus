@@ -45,7 +45,7 @@ export default {
       <div class="info">
         <carousel class="animated flipInX delay-750"
           :items="screenshots" :active.sync="active">
-          <template slot="item" scope="props">
+          <template slot="item" slot-scope="props">
             <img :src="props.item.src" alt="props.item.alt">
           </template>
         </carousel>

@@ -155,7 +155,7 @@ export default {
 
       <carousel class="small-tables animated flipInX delay-500"
         :items="plansByPriority" :active.sync="active">
-        <template slot="item" scope="props">
+        <template slot="item" slot-scope="props">
           <table>
             <thead>
               <tr>
